@@ -117,12 +117,18 @@ export function Footer() {
 
       {/* Copyright Footer */}
       <footer className="bg-[#1F7A4A] w-full">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-28 py-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-28 py-4 flex flex-col items-center justify-center gap-1">
           <p 
             className="text-sm text-white/70 text-center leading-5"
             style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
           >
             © 2026 Quality West Company Pty. Ltd. All rights reserved.
+          </p>
+          <p 
+            className="text-xs text-white/50 text-center tracking-wide"
+            style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
+          >
+            Made by Graphikwise
           </p>
         </div>
       </footer>
