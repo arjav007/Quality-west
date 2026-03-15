@@ -72,17 +72,13 @@ export function Header() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
               setIsMenuOpen(false);
             }}
-            className="flex items-center gap-2 flex-shrink-0"
+            className="flex items-center flex-shrink-0 hover:opacity-90 transition-opacity"
           >
-            <div className="bg-[#1F7A4A] w-10 h-10 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">QW</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="font-bold text-[#1F7A4A] text-lg leading-tight">
-                Quality West
-              </h1>
-              <p className="text-xs text-[#6B6B6B]">Organic Solutions</p>
-            </div>
+            <img 
+              src="/assets/QualityWest 02.svg" 
+              alt="Quality West Logo" 
+              className="h-12 sm:h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation - Responsive Gaps and Text */}
