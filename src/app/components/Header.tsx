@@ -75,9 +75,9 @@ export function Header() {
             className="flex items-center flex-shrink-0 hover:opacity-90 transition-opacity"
           >
             <img 
-              src="/assets/QualityWest 02.svg" 
+              src="/assets/QualityWest 01.svg" 
               alt="Quality West Logo" 
-              className="h-12 sm:h-14 w-auto"
+              className="h-8 sm:h-9 w-auto" 
             />
           </Link>
 
