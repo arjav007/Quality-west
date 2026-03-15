@@ -23,6 +23,7 @@ export function LeadForm({ variant = 'section', products = [], preSelectedProduc
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
   const [errors, setErrors] = useState({
     phone: '',
@@ -56,24 +57,60 @@ export function LeadForm({ variant = 'section', products = [], preSelectedProduc
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send data to a backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
+    setIsSubmitting(true);
     
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        farmName: '',
-        products: [],
-        message: '',
+    // Map selected product IDs to their actual names for the email
+    const selectedProductNames = formData.products
+      .map(id => products.find(p => p.id === id)?.name)
+      .filter(Boolean)
+      .join(', ');
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "c0d85ff9-650d-4713-b2c6-9230ad056126",
+          subject: `New Lead from ${formData.name} - Quality West`,
+          from_name: "Quality West Website",
+          Name: formData.name,
+          Phone: formData.phone,
+          Email: formData.email,
+          "Farm/Organisation": formData.farmName || "Not provided",
+          "Interested Products": selectedProductNames || "None selected",
+          Message: formData.message || "No additional message",
+        }),
       });
-      setSubmitted(false);
-    }, 3000);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            phone: '',
+            email: '',
+            farmName: '',
+            products: [],
+            message: '',
+          });
+          setSubmitted(false);
+        }, 3000);
+      } else {
+        alert("Oops! There was a problem submitting your form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Oops! There was a network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -311,20 +348,27 @@ export function LeadForm({ variant = 'section', products = [], preSelectedProduc
       {/* Submit Button */}
       <button
         type="submit"
-        className="bg-[#1f7a4a] hover:bg-[#165a36] text-white h-[56px] w-full rounded-[10px] font-['DM_Sans',sans-serif] font-medium text-[16px] transition-colors flex items-center justify-center gap-2"
+        disabled={isSubmitting}
+        className={`bg-[#1f7a4a] hover:bg-[#165a36] text-white h-[56px] w-full rounded-[10px] font-['DM_Sans',sans-serif] font-medium text-[16px] transition-colors flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
       >
-        <svg className="size-[18px]" fill="none" viewBox="0 0 18 18">
-          <g clipPath="url(#clip0_57_1077)">
-            <path d={svgPaths.p3a8355f0} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-            <path d={svgPaths.p280f2c80} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-          </g>
-          <defs>
-            <clipPath id="clip0_57_1077">
-              <rect fill="white" height="18" width="18" />
-            </clipPath>
-          </defs>
-        </svg>
-        Submit Enquiry
+        {isSubmitting ? (
+          <span>Submitting...</span>
+        ) : (
+          <>
+            <svg className="size-[18px]" fill="none" viewBox="0 0 18 18">
+              <g clipPath="url(#clip0_57_1077)">
+                <path d={svgPaths.p3a8355f0} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                <path d={svgPaths.p280f2c80} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+              </g>
+              <defs>
+                <clipPath id="clip0_57_1077">
+                  <rect fill="white" height="18" width="18" />
+                </clipPath>
+              </defs>
+            </svg>
+            Submit Enquiry
+          </>
+        )}
       </button>
     </form>
   );

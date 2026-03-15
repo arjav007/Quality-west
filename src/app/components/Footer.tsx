@@ -1,19 +1,19 @@
 import { Link } from 'react-router';
 import { ChevronRight, Phone, MessageCircle } from 'lucide-react';
 import svgPaths from '@/imports/svg-jcquk1tgey';
-import imgWhatsAppIcon from 'figma:asset/d006c6a64198400f28f7f57d831274dc9fa439b3.png';
+import imgWhatsAppIcon from "../../assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png";
 
 export function Footer() {
   const handleSubmitEnquiry = () => {
-    window.location.href = '/#contact-form';
+    window.location.href = '/#home';
   };
 
   const handleCallUs = () => {
-    window.location.href = 'tel:+1234567890'; // Replace with actual phone number
+    window.location.href = 'tel:+61405052588'; // Replace with actual phone number
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/1234567890', '_blank'); // Replace with actual WhatsApp number
+    window.open('https://wa.me/+61405052588', '_blank'); // Replace with actual WhatsApp number
   };
 
   return (

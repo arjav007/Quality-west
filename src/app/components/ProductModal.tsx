@@ -1,7 +1,6 @@
 import { X, Phone, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import imgWhatsAppIcon from 'figma:asset/d006c6a64198400f28f7f57d831274dc9fa439b3.png';
-
+import imgWhatsAppIcon from "../../assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png";
 interface Product {
   id: string;
   name: string;
@@ -223,14 +222,14 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
                       Enquire Now
                     </button>
                     <a
-                      href="tel:+61400000000"
+                      href="tel:+61405052588"
                       className="flex-1 bg-white border-2 border-[#1F7A4A] text-[#1F7A4A] hover:bg-[#F8F9F6] py-3 px-6 rounded-[10px] transition-colors flex items-center justify-center gap-2"
                     >
                       <Phone size={18} />
                       Call Us
                     </a>
                     <a
-                      href="https://wa.me/61400000000"
+                      href="https://wa.me/61405052588"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 justify-center"
