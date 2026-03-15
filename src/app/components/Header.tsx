@@ -1,0 +1,201 @@
+import { useState, useEffect } from 'react';
+import { Menu, X, Phone, Mail, MessageCircle } from 'lucide-react';
+import { Link, useLocation } from 'react-router';
+import imgWhatsAppIcon from 'figma:asset/d006c6a64198400f28f7f57d831274dc9fa439b3.png';
+
+export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: '/#why-choose', label: 'Why Choose Us', type: 'hash' },
+    { href: '/#products', label: 'Products', type: 'hash' },
+    { href: '/#testimonials', label: 'Testimonials', type: 'hash' },
+    { href: '/#about', label: 'About', type: 'hash' },
+    { href: '/crop-solution', label: 'Crop Solution', type: 'route' },
+  ];
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Handle both '#section' and '/#section' formats
+    const isHashLink = href.startsWith('#') || href.startsWith('/#');
+    
+    if (isHashLink) {
+      e.preventDefault();
+      
+      // If not on home page, navigate to home page with hash
+      if (!isHomePage) {
+        const hash = href.startsWith('/#') ? href : `/${href}`;
+        window.location.href = hash;
+        return;
+      }
+      
+      // Extract the element ID (remove '#' or '/#')
+      const elementId = href.replace(/^\/?#/, '');
+      const element = document.querySelector(`#${elementId}`);
+      
+      if (element) {
+        const offset = 80; // Account for sticky header height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        setIsMenuOpen(false);
+      }
+    }
+  };
+
+  return (
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-white/90 backdrop-blur-sm'
+      }`}
+    >
+      <div className="container mx-auto px-4 md:px-8 lg:px-6">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo/Brand */}
+          <Link
+            to="/"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setIsMenuOpen(false);
+            }}
+            className="flex items-center gap-2"
+          >
+            <div className="bg-[#1F7A4A] w-10 h-10 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">QW</span>
+            </div>
+            <div className="hidden sm:block">
+              <h1 className="font-bold text-[#1F7A4A] text-lg leading-tight">
+                Quality West
+              </h1>
+              <p className="text-xs text-[#6B6B6B]">Organic Solutions</p>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
+                className="text-[#6B6B6B] hover:text-[#1F7A4A] font-medium transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Desktop CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a
+              href="tel:+61400000000"
+              className="bg-white border border-[#1F7A4A] text-[#1F7A4A] hover:bg-gray-50 transition-colors inline-flex items-center gap-2 px-6 py-3 rounded-[10px] font-medium"
+            >
+              <Phone size={18} />
+              <span>Call Us</span>
+            </a>
+            <a
+              href="#contact-form"
+              onClick={(e) => scrollToSection(e, '#contact-form')}
+              className="bg-[#1F7A4A] hover:bg-[#165a36] text-white px-6 py-3 rounded-[10px] font-medium transition-colors"
+            >
+              Enquire Now
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden text-[#1F7A4A] p-2"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200">
+          <nav className="container mx-auto px-4 md:px-8 lg:px-6 py-4 flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
+                className="text-[#6B6B6B] hover:text-[#1F7A4A] font-medium py-2 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="border-t border-gray-200 pt-3 mt-2 space-y-3">
+              <a
+                href="tel:+61400000000"
+                className="bg-white border border-[#1F7A4A] text-[#1F7A4A] hover:bg-gray-50 transition-all inline-flex items-center gap-2 px-6 py-3 rounded-[10px] font-medium w-full sm:w-auto justify-center"
+              >
+                <Phone size={18} />
+                <span 
+                  className="font-medium text-base"
+                  style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                >
+                  Call Us
+                </span>
+              </a>
+              <a
+                href="https://wa.me/61400000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+              >
+                <div className="relative shrink-0 w-[18px] h-[18px]">
+                  <div 
+                    className="absolute inset-0 bg-white" 
+                    style={{ 
+                      maskImage: `url('${imgWhatsAppIcon}')`,
+                      maskSize: '18px 18px',
+                      maskPosition: 'center',
+                      maskRepeat: 'no-repeat',
+                      WebkitMaskImage: `url('${imgWhatsAppIcon}')`,
+                      WebkitMaskSize: '18px 18px',
+                      WebkitMaskPosition: 'center',
+                      WebkitMaskRepeat: 'no-repeat'
+                    }} 
+                  />
+                </div>
+                <span 
+                  className="font-medium text-base"
+                  style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                >
+                  WhatsApp
+                </span>
+              </a>
+              
+              <a
+                href="#contact-form"
+                onClick={(e) => scrollToSection(e, '#contact-form')}
+                className="bg-[#1F7A4A] hover:bg-[#165a36] text-white px-5 py-3 rounded-[10px] font-medium transition-colors text-center block"
+              >
+                Enquire Now
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+}
