@@ -8,10 +8,10 @@ export interface Product {
   overview: string;
   composition: string[];
   benefits: string[];
-  dosage?: string[]; // Optional field for dosage information
-  applicationMethod?: string[]; // Optional field for application method
-  precautions?: string[]; // Optional field for precautions
-  controls?: string; // Optional field for what the product controls
+  dosage?: string[];
+  applicationMethod?: string[];
+  precautions?: string[];
+  controls?: string;
   recommendedCrops: string[];
 }
 
@@ -21,7 +21,7 @@ export const products: Product[] = [
     name: 'Tag Veria',
     tagline: 'Broad-Spectrum Bio-Insecticide',
     category: 'Biological Insecticide',
-    image: 'https://images.unsplash.com/photo-1707424124274-689499bbe5e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcmdhbmljJTIwZmFybSUyMHByb2R1Y3R8ZW58MXx8fHwxNzY4NjQ3NzcyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/assets/Tag-Veria.jpg',
     keyFeatures: ['100 Million CFU/gram', 'Broad-Spectrum Bio-Insecticide', 'IPM Compatible & Residue-free'],
     overview: 'Tag Veria is a broad-spectrum bio-insecticide containing a highly virulent strain of Beauveria bassiana, an entomopathogenic fungus effective against a wide range of sucking and chewing insect pests. When the fungal spores (conidia) come in contact with the insect body, they attach to the cuticle and germinate, causing a disease known as white muscardine, which eventually kills the insect by draining its nutrients. Tag Veria is an eco-friendly biological product that fits well into Integrated Pest Management (IPM) programs. It contains a high spore count (minimum 100 million CFU per gram) and leaves no harmful residues in crops or the environment. It is compatible with most agricultural chemicals except chemical fungicides.',
     composition: [
@@ -62,7 +62,7 @@ export const products: Product[] = [
     name: 'Tag Nema',
     tagline: 'Natural Bio-Nematicide',
     category: 'Biological Nematicide',
-    image: 'https://images.unsplash.com/photo-1642754594150-99374ec8b41c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW1hdG9kZSUyMGNvbnRyb2wlMjBiaW9sb2dpY2FsJTIwcG93ZGVyJTIwYWdyaWN1bHR1cmV8ZW58MXx8fHwxNzcyOTY3NzAzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/assets/Tag-Nema.jpg',
     keyFeatures: [
       '2 Million CFU/gram',
       'Bio-Nematicide for All Life Stages',
@@ -106,7 +106,7 @@ export const products: Product[] = [
     name: 'TagLife V',
     tagline: 'Natural Bio-Fungicide with F45 Strain',
     category: 'Biological Fungicide',
-    image: 'https://images.unsplash.com/photo-1752351354291-3d2ce93a17e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmljaG9kZXJtYSUyMHZpcmlkZSUyMGJpb2Z1bmdpY2lkZSUyMGdyZWVuJTIwcG93ZGVyfGVufDF8fHx8MTc3Mjk2MjE0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/assets/taglife-V1.jpg',
     keyFeatures: [
       '2 Million CFU/gram',
       'F45 Strain Trichoderma viride',
@@ -149,7 +149,7 @@ export const products: Product[] = [
     name: 'TagLife H',
     tagline: 'Natural Bio-Fungicide & Bio-Nematicide',
     category: 'Biological Fungicide',
-    image: 'https://images.unsplash.com/photo-1670005485889-40ade3afd2a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmljaG9kZXJtYSUyMGJpb2Z1bmdpY2lkZSUyMHBvd2RlciUyMGFncmljdWx0dXJhbHxlbnwxfHx8fDE3NzI5NjE4Njl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/assets/taglife H1.jpg',
     keyFeatures: [
       '2 Million CFU/gram',
       'Bio-Fungicide & Bio-Nematicide',
@@ -195,7 +195,7 @@ export const products: Product[] = [
     name: 'Tag Monas',
     tagline: 'Biological Plant Protection',
     category: 'Biological Fungicide',
-    image: 'figma:asset/c75759276f8a9efa9e89b18261901cf75183ee59.png',
+    image: '/assets/tag-Monas.jpg',
     keyFeatures: [
       '100 Million CFU/gram',
       'Fungicide, Bactericide & Nematicide',
@@ -244,7 +244,7 @@ export const products: Product[] = [
     name: 'Tag K20',
     tagline: 'Premium Potassium Fertilizer',
     category: 'Organic Fertilizer',
-    image: 'figma:asset/1e440777d2c9a4f81cb4b5f3f0cf58f6082c8c5b.png',
+    image: '/assets/Tag-K20.png',
     keyFeatures: ['20% Organic Potash', 'Marine Red Algae Extract', 'Bio-active Molecules'],
     overview: 'Tag K20 is a new-generation plant nutrition product containing minimum 20% potash derived from Rhodophytes (marine red algae) along with 1.5% sulphur and bio-active molecules. This unique formulation enhances flowering, fruit development, and overall crop yield. Tag K20 improves plant hormonal activity which helps in enhancing the shape, size, colour, and lustre of fruits. It also helps plants withstand abiotic stresses such as drought and environmental stress, leading to healthier crops and better quality produce.',
     composition: [
@@ -281,7 +281,7 @@ export const products: Product[] = [
     name: 'Tag Carb-N',
     tagline: 'Granulated Organic Manure',
     category: 'Biostimulant',
-    image: 'https://images.unsplash.com/photo-1761732941287-b332e1eb6315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcmdhbmljJTIwZ3JhbnVsYXIlMjBmZXJ0aWxpemVyJTIwc29pbCUyMGFtZW5kbWVudHxlbnwxfHx8fDE3NzI5Njc5NTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/assets/Tag-Carb -N.png',
     keyFeatures: [
       'Organic Carbon + NPK',
       'Granulated Organic Manure',
@@ -320,7 +320,7 @@ export const products: Product[] = [
     name: 'Gold Bionik',
     tagline: 'Soluble VAM for Stronger Crops',
     category: 'Biofertilizer',
-    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80',
+    image: '/assets/Gold-Bionik.png',
     keyFeatures: [
       '2000 VAM Spores/gram',
       '100% Water Soluble',

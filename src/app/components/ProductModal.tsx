@@ -1,6 +1,6 @@
 import { X, Phone, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import imgWhatsAppIcon from "../../assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png";
+
 interface Product {
   id: string;
   name: string;
@@ -65,14 +65,13 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
               {/* Content */}
               <div className="p-6 space-y-6">
                 {/* Product Image */}
-                <div className="rounded-xl overflow-hidden border border-gray-200">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
-
+<div className="rounded-xl overflow-hidden border border-gray-200 bg-[#F8F9F6] p-4 flex items-center justify-center">
+  <img
+    src={product.image}
+    alt={product.name}
+    className="w-full h-72 object-contain mix-blend-darken"
+  />
+</div>
                 {/* Overview */}
                 <div>
                   <h3 className="text-lg font-semibold text-[#1F7A4A] mb-2">Product Overview</h3>
@@ -238,11 +237,11 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
                         <div 
                           className="absolute inset-0 bg-white" 
                           style={{ 
-                            maskImage: `url('${imgWhatsAppIcon}')`,
+                            maskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
                             maskSize: '18px 18px',
                             maskPosition: 'center',
                             maskRepeat: 'no-repeat',
-                            WebkitMaskImage: `url('${imgWhatsAppIcon}')`,
+                            WebkitMaskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
                             WebkitMaskSize: '18px 18px',
                             WebkitMaskPosition: 'center',
                             WebkitMaskRepeat: 'no-repeat'

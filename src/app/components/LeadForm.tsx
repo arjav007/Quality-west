@@ -75,7 +75,7 @@ export function LeadForm({ variant = 'section', products = [], preSelectedProduc
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "c0d85ff9-650d-4713-b2c6-9230ad056126",
+          access_key: "b2f40345-b8dc-4841-bf56-0c008be83bb4",
           subject: `New Lead from ${formData.name} - Quality West`,
           from_name: "Quality West Website",
           Name: formData.name,

@@ -7,7 +7,7 @@ import { Header } from '../components/Header';
 import { LeadForm } from '../components/LeadForm';
 import { ProductModal } from '../components/ProductModal';
 import { Footer } from '../components/Footer';
-import imgWhatsAppIcon from "../../assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png";
+
 // Category color mapping
 const getCategoryColor = (category: string) => {
   switch (category) {
@@ -216,44 +216,44 @@ export default function HomePage() {
               </div>
 
               {/* CTA Buttons */}
-<div className="flex flex-wrap gap-4 pt-0">
-  {/* Updated Call Us Button */}
-  <a
-    href="tel:+61405052588" 
-    className="bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] border border-[rgba(255,255,255,0.4)] text-white px-6 py-3 rounded-[10px] font-medium transition-colors inline-flex items-center gap-2"
-    style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
-  >
-    <Phone size={18} />
-    <span className="hidden sm:inline">Call Us</span>
-    <span className="sm:hidden">Call</span>
-  </a>
+              <div className="flex flex-wrap gap-4 pt-0">
+                {/* Updated Call Us Button */}
+                <a
+                  href="tel:+61405052588" 
+                  className="bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] border border-[rgba(255,255,255,0.4)] text-white px-6 py-3 rounded-[10px] font-medium transition-colors inline-flex items-center gap-2"
+                  style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                >
+                  <Phone size={18} />
+                  <span className="hidden sm:inline">Call Us</span>
+                  <span className="sm:hidden">Call</span>
+                </a>
 
-  {/* WhatsApp Button */}
-  <a
-    href="https://wa.me/61405052588" 
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
-    style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
-  >
-    <div className="relative shrink-0 w-[18px] h-[18px]">
-      <div 
-        className="absolute inset-0 bg-white" 
-        style={{ 
-          maskImage: `url(${imgWhatsAppIcon})`,
-          maskSize: '18px 18px',
-          maskPosition: 'center',
-          maskRepeat: 'no-repeat',
-          WebkitMaskImage: `url(${imgWhatsAppIcon})`,
-          WebkitMaskSize: '18px 18px',
-          WebkitMaskPosition: 'center',
-          WebkitMaskRepeat: 'no-repeat'
-        }} 
-      />
-    </div>
-    <span className="font-medium text-base">WhatsApp</span>
-  </a>
-</div>
+                {/* WhatsApp Button */}
+                <a
+                  href="https://wa.me/61405052588" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+                  style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                >
+                  <div className="relative shrink-0 w-[18px] h-[18px]">
+                    <div 
+                      className="absolute inset-0 bg-white" 
+                      style={{ 
+                        maskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
+                        maskSize: '18px 18px',
+                        maskPosition: 'center',
+                        maskRepeat: 'no-repeat',
+                        WebkitMaskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
+                        WebkitMaskSize: '18px 18px',
+                        WebkitMaskPosition: 'center',
+                        WebkitMaskRepeat: 'no-repeat'
+                      }} 
+                    />
+                  </div>
+                  <span className="font-medium text-base">WhatsApp</span>
+                </a>
+              </div>
             </div>
 
             {/* Right Column - Lead Form */}
@@ -392,13 +392,13 @@ export default function HomePage() {
                 <div key={product.id} className="px-3">
                   <div className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all h-full">
                     {/* Product Image */}
-                    <div className="h-64 overflow-hidden bg-gray-100">
-                      <img 
-                        src={product.image} 
-                        alt={product.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+<div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center">
+  <img 
+    src={product.image} 
+    alt={product.name}
+    className="w-full h-full object-contain mix-blend-darken"
+  />
+</div>
 
                     {/* Product Info */}
                     <div className="p-6">
@@ -444,13 +444,13 @@ export default function HomePage() {
             {filteredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all hover:shadow-lg">
                 {/* Product Image */}
-                <div className="h-64 overflow-hidden bg-gray-100">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+<div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center">
+  <img 
+    src={product.image} 
+    alt={product.name}
+    className="w-full h-full object-contain mix-blend-darken"
+  />
+</div>
 
                 {/* Product Info */}
                 <div className="p-6">

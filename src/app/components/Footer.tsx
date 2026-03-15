@@ -1,7 +1,6 @@
 import { Link } from 'react-router';
 import { ChevronRight, Phone, MessageCircle } from 'lucide-react';
 import svgPaths from '@/imports/svg-jcquk1tgey';
-import imgWhatsAppIcon from "../../assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png";
 
 export function Footer() {
   const handleSubmitEnquiry = () => {
@@ -93,11 +92,11 @@ export function Footer() {
                   <div 
                     className="absolute inset-0 bg-white" 
                     style={{ 
-                      maskImage: `url('${imgWhatsAppIcon}')`,
+                      maskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
                       maskSize: '18px 18px',
                       maskPosition: 'center',
                       maskRepeat: 'no-repeat',
-                      WebkitMaskImage: `url('${imgWhatsAppIcon}')`,
+                      WebkitMaskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
                       WebkitMaskSize: '18px 18px',
                       WebkitMaskPosition: 'center',
                       WebkitMaskRepeat: 'no-repeat'
