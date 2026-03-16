@@ -361,7 +361,7 @@ export const crops: Crop[] = [
         id: 'onion-powdery-mildew',
         name: 'Powdery Mildew',
         description: 'Serious soil-borne disease causing root decay and white fluffy fungal growth. Can persist in soil for many years.',
-        image: '/assets/powdery mildew 01.jpg',
+        image: '/assets/powdery mildew 01.png',
         recommendedProducts: ['tag-humic', 'tag-zinc', 'tag-poly']
       }
     ]
