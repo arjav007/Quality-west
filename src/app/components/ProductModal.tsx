@@ -45,10 +45,10 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-xl border border-gray-200 max-w-2xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto"
+              className="bg-white rounded-xl border border-gray-200 max-w-2xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto relative"
             >
-              {/* Header */}
-              <div className="sticky top-0 bg-[#1F7A4A] text-white p-6 rounded-t-xl flex justify-between items-start">
+              {/* Header - Added z-10 and a subtle shadow so it stays above content */}
+              <div className="sticky top-0 z-10 bg-[#1F7A4A] text-white p-6 rounded-t-xl flex justify-between items-start shadow-md">
                 <div>
                   <h2 className="text-2xl font-semibold mb-1">{product.name}</h2>
                   <p className="text-white/90">{product.tagline}</p>
@@ -65,17 +65,18 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
               {/* Content */}
               <div className="p-6 space-y-6">
                 {/* Product Image */}
-<div className="rounded-xl overflow-hidden border border-gray-200 bg-[#F8F9F6] p-4 flex items-center justify-center">
-  <img
-    src={product.image}
-    alt={product.name}
-    className="w-full h-72 object-contain mix-blend-darken"
-  />
-</div>
+                <div className="rounded-xl overflow-hidden border border-gray-200 bg-[#F8F9F6] p-4 flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-72 object-contain mix-blend-darken"
+                  />
+                </div>
+                
                 {/* Overview */}
                 <div>
                   <h3 className="text-lg font-semibold text-[#1F7A4A] mb-2">Product Overview</h3>
-                  <p className="text-[#6B6B6B]">{product.overview}</p>
+                  <p className="text-[#6B6B6B] leading-relaxed">{product.overview}</p>
                 </div>
 
                 {/* Composition - Smart Display */}
@@ -88,7 +89,7 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
                   );
 
                   return (
-                    <>
+                    <div className="space-y-6">
                       {activeIngredient && (
                         <div>
                           <h3 className="text-lg font-semibold text-[#1F7A4A] mb-2">Active Ingredient</h3>
@@ -116,14 +117,14 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
                           <ul className="space-y-1">
                             {regularComposition.map((item, index) => (
                               <li key={index} className="text-[#6B6B6B] flex items-start">
-                                <span className="text-[#4CAF50] mr-2">•</span>
+                                <span className="text-[#4CAF50] mr-2 mt-0.5">•</span>
                                 <span>{item}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
                       )}
-                    </>
+                    </div>
                   );
                 })()}
 
@@ -189,7 +190,7 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
                 {product.controls && (
                   <div>
                     <h3 className="text-lg font-semibold text-[#1F7A4A] mb-2">Controls</h3>
-                    <p className="text-[#6B6B6B]">{product.controls}</p>
+                    <p className="text-[#6B6B6B] leading-relaxed">{product.controls}</p>
                   </div>
                 )}
 
@@ -209,20 +210,20 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
                 </div>
 
                 {/* CTA Section */}
-                <div className="pt-4 border-t border-gray-200">
+                <div className="pt-6 border-t border-gray-200">
                   <p className="text-center text-[#6B6B6B] mb-4">
                     Interested in {product.name}? Get in touch with us today.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <button 
                       onClick={() => onEnquire && onEnquire(product.id)}
-                      className="flex-1 bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-6 rounded-[10px] transition-colors flex items-center justify-center gap-2"
+                      className="flex-1 bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-6 rounded-[10px] transition-colors flex items-center justify-center gap-2 font-medium"
                     >
                       Enquire Now
                     </button>
                     <a
                       href="tel:+61405052588"
-                      className="flex-1 bg-white border-2 border-[#1F7A4A] text-[#1F7A4A] hover:bg-[#F8F9F6] py-3 px-6 rounded-[10px] transition-colors flex items-center justify-center gap-2"
+                      className="flex-1 bg-white border-2 border-[#1F7A4A] text-[#1F7A4A] hover:bg-[#F8F9F6] py-3 px-6 rounded-[10px] transition-colors flex items-center justify-center gap-2 font-medium"
                     >
                       <Phone size={18} />
                       Call Us
@@ -231,7 +232,7 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
                       href="https://wa.me/61405052588"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 justify-center"
+                      className="flex-1 bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-[10px] transition-all flex items-center justify-center gap-2"
                     >
                       <div className="relative shrink-0 w-[18px] h-[18px]">
                         <div 
