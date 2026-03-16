@@ -216,16 +216,15 @@ export default function HomePage() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 pt-0">
+              <div className="flex flex-col sm:flex-row gap-4 pt-0">
                 {/* Updated Call Us Button */}
                 <a
                   href="tel:+61405052588" 
-                  className="bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] border border-[rgba(255,255,255,0.4)] text-white px-6 py-3 rounded-[10px] font-medium transition-colors inline-flex items-center gap-2"
+                  className="bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] border border-[rgba(255,255,255,0.4)] text-white px-6 py-3 rounded-[10px] font-medium transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
                   style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
                 >
                   <Phone size={18} />
-                  <span className="hidden sm:inline">Call Us</span>
-                  <span className="sm:hidden">Call</span>
+                  <span>Call Us</span>
                 </a>
 
                 {/* WhatsApp Button */}
@@ -233,7 +232,7 @@ export default function HomePage() {
                   href="https://wa.me/61405052588" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+                  className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
                   style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
                 >
                   <div className="relative shrink-0 w-[18px] h-[18px]">
