@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import { Check, ChevronRight, ChevronLeft, Leaf, TrendingUp, Shield, Handshake, Building2, Layers, Droplets, Sprout, Sun, Phone, MessageCircle, Heart } from 'lucide-react';
-import Slider from 'react-slick';
+import { useState, useRef } from 'react';
+import { Check, ChevronRight, ChevronLeft, Leaf, TrendingUp, Shield, Handshake, Building2, Layers, Droplets, Sprout, Sun, Phone, Heart } from 'lucide-react';
 import { products, categories } from '../data/productData';
 import { motion } from 'motion/react';
 import { Header } from '../components/Header';
@@ -33,6 +32,9 @@ export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [preSelectedProducts, setPreSelectedProducts] = useState<string[]>([]);
+  
+  // Reference for the scrolling container
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   const openProductModal = (product: typeof products[0]) => {
     setSelectedProduct(product);
@@ -60,65 +62,20 @@ export default function HomePage() {
     }, 300);
   };
 
+  // Scroll function for the arrow buttons
+  const scroll = (direction: 'left' | 'right') => {
+    if (sliderRef.current) {
+      const { current } = sliderRef;
+      // Scroll by roughly the width of one card + gap
+      const scrollAmount = direction === 'left' ? -current.offsetWidth / 2 : current.offsetWidth / 2;
+      current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   // Filter products based on selected category
   const filteredProducts = selectedCategory === 'All' 
     ? products 
     : products.filter(p => p.category === selectedCategory);
-
-  // Custom arrow components for slider
-  const CustomPrevArrow = (props: any) => {
-    const { onClick } = props;
-    return (
-      <button
-        onClick={onClick}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-[#1F7A4A] rounded-full p-3 shadow-lg transition-all hidden lg:flex items-center justify-center"
-        aria-label="Previous"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-    );
-  };
-
-  const CustomNextArrow = (props: any) => {
-    const { onClick } = props;
-    return (
-      <button
-        onClick={onClick}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-[#1F7A4A] rounded-full p-3 shadow-lg transition-all hidden lg:flex items-center justify-center"
-        aria-label="Next"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-    );
-  };
-
-  // Slider settings for product carousel
-  const sliderSettings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: true,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ]
-  };
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
@@ -350,7 +307,7 @@ export default function HomePage() {
 
       {/* Products Overview */}
       <section id="products" className="py-16 sm:py-20 bg-[#F8F9F6]">
-        <div className="container mx-auto px-4 md:px-8 lg:px-6">
+        <div className="container mx-auto px-4 md:px-8 lg:px-6 relative">
           <div className="text-center mb-8">
             <h2 
               className="text-3xl sm:text-4xl font-semibold text-[#7a4d1f] mb-4"
@@ -367,7 +324,10 @@ export default function HomePage() {
           </div>
 
           {/* Category Filters */}
-<div className="flex gap-3 justify-start lg:justify-center mb-8 overflow-x-auto pb-4 w-full scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div 
+            className="flex gap-3 justify-start lg:justify-center mb-8 overflow-x-auto pb-4 w-full scrollbar-hide" 
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             {categories.map((category) => (
               <button
                 key={category}
@@ -384,23 +344,37 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Product Carousel - Desktop */}
+          {/* Product List - Desktop (Native Horizontal Scroll with Arrows) */}
           <div className="hidden md:block relative">
-            <Slider {...sliderSettings} arrows={false} dots={true}>
+            {/* Left Scroll Arrow */}
+            <button 
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-[40%] -translate-y-1/2 -ml-5 z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 text-[#1F7A4A] hover:bg-gray-50 transition-all"
+              aria-label="Scroll Left"
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            <div 
+              ref={sliderRef}
+              className="flex gap-6 overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory w-full px-2"
+              style={{ WebkitOverflowScrolling: 'touch' }}
+            >
               {filteredProducts.map((product) => (
-                <div key={product.id} className="px-3">
-                  <div className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all h-full">
+                <div key={product.id} className="w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] flex-shrink-0 snap-start">
+                  <div className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all h-full flex flex-col">
                     {/* Product Image */}
-<div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center">
-  <img 
-    src={product.image} 
-    alt={product.name}
-    className="w-full h-full object-contain mix-blend-darken"
-  />
-</div>
+                    <div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center">
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        draggable={false}
+                        className="w-full h-full object-contain mix-blend-darken select-none pointer-events-none"
+                      />
+                    </div>
 
                     {/* Product Info */}
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-grow">
                       {/* Category Badge */}
                       <div className="mb-3">
                         <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${getCategoryColor(product.category)}`}>
@@ -408,7 +382,7 @@ export default function HomePage() {
                         </span>
                       </div>
 
-                      <div className="mb-4">
+                      <div className="mb-4 flex-grow">
                         <h3 className="text-2xl font-bold text-[#1F7A4A] mb-2">{product.name}</h3>
                         <p className="text-[#6B6B6B]">{product.tagline}</p>
                       </div>
@@ -426,7 +400,7 @@ export default function HomePage() {
                       {/* CTA Button */}
                       <button
                         onClick={() => openProductModal(product)}
-                        className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                        className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mt-auto"
                       >
                         View Full Details
                         <ChevronRight size={18} />
@@ -435,7 +409,16 @@ export default function HomePage() {
                   </div>
                 </div>
               ))}
-            </Slider>
+            </div>
+
+            {/* Right Scroll Arrow */}
+            <button 
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-[40%] -translate-y-1/2 -mr-5 z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 text-[#1F7A4A] hover:bg-gray-50 transition-all"
+              aria-label="Scroll Right"
+            >
+              <ChevronRight size={24} />
+            </button>
           </div>
 
           {/* Product Grid - Mobile */}
@@ -443,16 +426,16 @@ export default function HomePage() {
             {filteredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all hover:shadow-lg">
                 {/* Product Image */}
-<div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center">
-  <img 
-    src={product.image} 
-    alt={product.name}
-    className="w-full h-full object-contain mix-blend-darken"
-  />
-</div>
+                <div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-contain mix-blend-darken select-none"
+                  />
+                </div>
 
                 {/* Product Info */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-full">
                   {/* Category Badge */}
                   <div className="mb-3">
                     <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${getCategoryColor(product.category)}`}>
@@ -478,7 +461,7 @@ export default function HomePage() {
                   {/* CTA Button */}
                   <button
                     onClick={() => openProductModal(product)}
-                    className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mt-auto"
                   >
                     View Full Details
                     <ChevronRight size={18} />
@@ -763,9 +746,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Final CTA */}
-      
 
       {/* Footer */}
       <Footer />
