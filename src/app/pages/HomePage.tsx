@@ -121,7 +121,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden w-full">
       {/* Header */}
       <Header />
 
@@ -368,7 +368,7 @@ export default function HomePage() {
           </div>
 
           {/* Category Filters */}
-          <div className="flex gap-3 justify-start lg:justify-center mb-8">
+<div className="flex gap-3 justify-start lg:justify-center mb-8 overflow-x-auto pb-4 w-full scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
             {categories.map((category) => (
               <button
                 key={category}
