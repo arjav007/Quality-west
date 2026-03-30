@@ -186,7 +186,7 @@ export default function HomePage() {
 
                 {/* WhatsApp Button */}
                 <a
-                  href="https://wa.me/61405052588" 
+                  href="https://wa.me/61405052588?text=Hi%20Quality%20West,%20I%20would%20like%20to%20enquire%20about%20your%20organic%20solutions." 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
@@ -596,50 +596,29 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <div className="flex gap-1 mb-4">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Testimonial 1 */}
+            <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+              <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="text-[#E6B65C] text-xl">★</span>
                 ))}
               </div>
-              <p className="text-[#6B6B6B] mb-4 italic">
-                "Since using Tag K20 on our vineyard, we've seen a remarkable improvement in grape quality. The fruit is sweeter and the vines are healthier. Highly recommend!"
+              <p className="text-[#6B6B6B] italic leading-relaxed text-[15px]">
+              “QualityWest did exactly what they promised, mate! I followed their advice and used their products properly—just four targeted sprays instead of overdoing it with chemicals. Last season, fungus really knocked my crop around and I only got about 5.5 quintals per acre. This year though, the cotton stayed healthy and green, and I’m expecting around 9 to 9.5 quintals per acre. Their regular farm visits and honest, no-nonsense advice have definitely earned my trust. Highly recommend them!”
               </p>
-              <div className="border-t border-gray-200 pt-4">
-                <p className="font-semibold text-[#1F7A4A]">Michael Thompson</p>
-                <p className="text-sm text-[#6B6B6B]">Vineyard Owner, Barossa Valley, SA</p>
-              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <div className="flex gap-1 mb-4">
+            {/* Testimonial 2 */}
+            <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+              <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="text-[#E6B65C] text-xl">★</span>
                 ))}
               </div>
-              <p className="text-[#6B6B6B] mb-4 italic">
-                "Tag Poly has been a game-changer for our organic certification journey. The soil health has improved dramatically and our yields are up by 15%. Great product!"
+              <p className="text-[#6B6B6B] italic leading-relaxed text-[15px]">
+              “I initially believed my cumin crop was beyond recovery after an accidental weedicide application and was preparing to plough the field, anticipating a loss of nearly ₹2 lakhs. However, after using Quality West’s Tag Start, the crop showed remarkable recovery, with healthy new growth appearing within just 3 to 4 days. It proved to be an extremely effective solution in reviving the crop. Based on this experience, I have strong confidence in Quality West’s guidance and products.”
               </p>
-              <div className="border-t border-gray-200 pt-4">
-                <p className="font-semibold text-[#1F7A4A]">Sarah Chen</p>
-                <p className="text-sm text-[#6B6B6B]">Organic Vegetable Farm, VIC</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-[#E6B65C] text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-[#6B6B6B] mb-4 italic">
-                "Quality West has been fantastic to deal with. Their products work as promised and their support team is always ready to help. Very happy with the results."
-              </p>
-              <div className="border-t border-gray-200 pt-4">
-                <p className="font-semibold text-[#1F7A4A]">David Williams</p>
-                <p className="text-sm text-[#6B6B6B]">Wheat & Grain Farmer, NSW</p>
-              </div>
             </div>
           </div>
         </div>

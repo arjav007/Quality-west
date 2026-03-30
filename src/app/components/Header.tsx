@@ -153,7 +153,7 @@ export function Header() {
                 </span>
               </a>
               <a
-                href="https://wa.me/61405052588"
+                href="https://wa.me/61405052588?text=Hi%20Quality%20West,%20I%20would%20like%20to%20enquire%20about%20your%20organic%20solutions."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"

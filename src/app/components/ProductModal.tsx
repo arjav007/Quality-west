@@ -229,7 +229,7 @@ export function ProductModal({ product, isOpen, onClose, onEnquire }: ProductMod
                       Call Us
                     </a>
                     <a
-                      href="https://wa.me/61405052588"
+                      href="https://wa.me/61405052588?text=Hi%20Quality%20West,%20I%20would%20like%20to%20enquire%20about%20your%20organic%20solutions."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-[10px] transition-all flex items-center justify-center gap-2"

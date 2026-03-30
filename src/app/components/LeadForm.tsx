@@ -129,10 +129,11 @@ export function LeadForm({ variant = 'section', products = [], preSelectedProduc
     }));
   };
 
+  // CORRECTED: Now validates Australian numbers correctly
   const validatePhone = (value: string) => {
-    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+    const phoneRegex = /^(\+?61|0)[0-9\s\-]{8,14}$/;
     if (!phoneRegex.test(value)) {
-      return 'Please enter a valid phone number.';
+      return 'Please enter a valid Australian phone number.';
     }
     return '';
   };
@@ -209,6 +210,8 @@ export function LeadForm({ variant = 'section', products = [], preSelectedProduc
             id="phone"
             name="phone"
             required
+            pattern="^(\+?61|0)[0-9\s\-]{8,14}$"
+            title="Please enter a valid Australian phone number (e.g., 0405052588, 61405052588, or +61405052588)"
             value={formData.phone}
             onChange={handleChange}
             onBlur={handleBlur}

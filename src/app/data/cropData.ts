@@ -182,56 +182,56 @@ export const crops: Crop[] = [
         id: 'pulses-ascochyta-blight',
         name: 'Ascochyta Blight',
         description: 'Major fungal disease of pulse crops causing leaf spots, stem lesions, and pod infection. Can cause severe yield loss in wet seasons and cool conditions.',
-        image: 'https://images.unsplash.com/photo-1761026515669-fba83c47ec8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWd1bWUlMjBibGlnaHQlMjBzcG90cyUyMGRpc2Vhc2V8ZW58MXx8fHwxNzczMjk3ODAxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+        image: '/assets/Ascohyta-Blight.png',
         recommendedProducts: ['taglife-h', 'taglife-v', 'tag-monas']
       },
       {
         id: 'pulses-fusarium-root-rot',
         name: 'Fusarium Root Rot/Wilt',
         description: 'Soil-borne fungal disease causing root rot, wilting, and plant death. Major problem in short pulse rotations and waterlogged soils.',
-        image: '/assets/root rot_stem rot.jpg',
+        image: '/assets/Fusarium-Root-Rot.png',
         recommendedProducts: ['taglife-h', 'taglife-v', 'tag-monas']
       },
       {
         id: 'pulses-sclerotinia',
         name: 'Sclerotinia Stem Rot',
         description: 'White mold disease causing stem lesions and wilting. Forms black resting structures (sclerotia) that persist in soil for years.',
-        image: 'https://images.unsplash.com/photo-1572315725436-77c72fcca254?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2xlcm90aW5pYSUyMHN0ZW0lMjByb3QlMjB3aGl0ZSUyMG1vbGR8ZW58MXx8fHwxNzczMjk3Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+        image: '/assets/sclerotinia-Stem-rot.png',
         recommendedProducts: ['taglife-h', 'taglife-v', 'tag-monas']
       },
       {
         id: 'pulses-botrytis',
         name: 'Botrytis Gray Mold',
         description: 'Grey fungal growth on flowers, stems, and pods. Major disease during flowering in wet, humid weather reducing pod set and yield.',
-        image: 'https://images.unsplash.com/photo-1699385917515-15cde0be06e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib3RyeXRpcyUyMGdyYXklMjBtb2xkJTIwZnVuZ3VzfGVufDF8fHx8MTc3MzI5Nzc5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+        image: '/assets/botrytis-Gray-Mold.png',
         recommendedProducts: ['taglife-h', 'taglife-v', 'tag-monas']
       },
       {
         id: 'pulses-pea-mosaic-virus',
         name: 'Pea Seed-borne Mosaic Virus',
         description: 'Virus disease transmitted by aphids and infected seed causing mosaic patterns, stunting, and yield reduction. Control requires resistant varieties and aphid management.',
-        image: 'https://images.unsplash.com/photo-1725722520663-5a4776a36104?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWElMjBtb3NhaWMlMjB2aXJ1cyUyMHllbGxvd2luZ3xlbnwxfHx8fDE3NzMyOTc3OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+        image: '/assets/pea seed-borne mosaic virus .png',
         recommendedProducts: ['tagveria']
       },
       {
         id: 'pulses-anthracnose',
         name: 'Anthracnose',
         description: 'Fungal disease causing dark sunken lesions on stems, leaves, and pods. Can cause seed staining and reduced germination in severe cases.',
-        image: 'https://images.unsplash.com/photo-1716378776798-85e2622f3e52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbnRocmFjbm9zZSUyMHB1bHNlJTIwbGVndW1lJTIwZGlzZWFzZXxlbnwxfHx8fDE3NzMyOTc3OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+        image: '/assets/anthracnse 02.png',
         recommendedProducts: ['taglife-h', 'taglife-v', 'tag-monas']
       },
       {
         id: 'pulses-powdery-mildew',
         name: 'Powdery Mildew',
         description: 'White powdery fungal growth on leaves, stems, and pods. Reduces photosynthesis and can affect seed quality at late infection.',
-        image: '/assets/powdery mildew 01.jpg',
+        image: '/assets/powdery mildew 01.png',
         recommendedProducts: ['taglife-h', 'taglife-v', 'tag-monas']
       },
       {
         id: 'pulses-rust',
         name: 'Rust',
         description: 'Orange-brown pustules on leaves, stems, and pods. Can cause premature defoliation and reduced grain quality and yield in severe infections.',
-        image: '/assets/Brown Rust 01.jpg',
+        image: '/assets/rust.png',
         recommendedProducts: ['taglife-h', 'taglife-v', 'tag-monas']
       },
       {
@@ -253,14 +253,14 @@ export const crops: Crop[] = [
         id: 'carrots-leaf-blight',
         name: 'Alternaria Leaf Blight',
         description: 'Fungal disease causing dark brown lesions on leaves. Reduces foliage vigor affecting root development and quality.',
-        image: '/assets/Alternaria Black spot.jpg',
+        image: '/assets/Alternaria-Black-spot.png',
         recommendedProducts: ['tag-k20', 'tag-zinc', 'tag-humic']
       },
       {
         id: 'carrots-powdery-mildew',
         name: 'Powdery Mildew',
         description: 'White powdery fungal growth on foliage. Common in dry conditions reducing photosynthetic capacity of leaves.',
-        image: '/assets/powdery mildew 01.jpg',
+        image: '/assets/powdery mildew 01.png',
         recommendedProducts: ['tag-k20', 'tag-humic', 'tag-zinc']
       },
       {
@@ -383,7 +383,7 @@ export const crops: Crop[] = [
         id: 'potato-powdery-mildew',
         name: 'Powdery Mildew',
         description: 'Bacterial disease causing rough, corky lesions on tuber surface. Reduces marketability particularly for fresh market potatoes.',
-        image: '/assets/powdery mildew 01.jpg',
+        image: '/assets/powdery mildew 01.png',
         recommendedProducts: ['tag-humic', 'tag-zinc', 'tag-poly']
       }
     ]

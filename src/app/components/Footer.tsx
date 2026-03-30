@@ -8,11 +8,12 @@ export function Footer() {
   };
 
   const handleCallUs = () => {
-    window.location.href = 'tel:+61405052588'; // Replace with actual phone number
+    window.location.href = 'tel:+61405052588';
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/+61405052588', '_blank'); // Replace with actual WhatsApp number
+    // Updated with the pre-filled message and removed the '+' for better WhatsApp compatibility
+    window.open('https://wa.me/61405052588?text=Hi%20Quality%20West,%20I%20would%20like%20to%20enquire%20about%20your%20organic%20solutions.', '_blank');
   };
 
   return (
