@@ -267,14 +267,14 @@ export const crops: Crop[] = [
         id: 'carrots-cavity-spot',
         name: 'Cavity Spot',
         description: 'Soil-borne disease causing sunken lesions on roots. Makes carrots unmarketable and reduces storage quality.',
-        image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: '/assets/Carrot Disease -Cavity-spot.jpg',
         recommendedProducts: ['tag-humic', 'tag-zinc', 'tag-poly']
       },
       {
         id: 'carrots-aphids',
         name: 'Carrot Aphid',
         description: 'Green aphids colonizing foliage causing leaf curling. Can transmit virus diseases affecting plant vigor.',
-        image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: '/assets/Carrot Disease- Carrot Aphid.jpg',
         recommendedProducts: ['tagveria', 'tag-neem']
       }
     ]
@@ -289,21 +289,21 @@ export const crops: Crop[] = [
         id: 'tomato-blight',
         name: 'Early Blight',
         description: 'Fungal disease creating concentric ring patterns on leaves. Progressive defoliation from bottom upward reduces fruit quality and yield.',
-        image: '/assets/Alternaria Black spot.jpg',
+        image: '/assets/Tomatoes-Early Blight .JPG',
         recommendedProducts: ['tag-zinc', 'tag-humic', 'tag-k20']
       },
       {
         id: 'tomato-late-blight',
         name: 'Late Blight',
         description: 'Highly destructive disease causing dark water-soaked lesions on leaves and fruits. Can destroy entire crop within days in favorable conditions.',
-        image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: '/assets/Tomatoes-Late Blight .jpg.webp',
         recommendedProducts: ['tag-k20', 'tag-zinc', 'tag-humic', 'tag-poly']
       },
       {
         id: 'tomato-whitefly',
         name: 'Whitefly',
         description: 'Sap-sucking pest transmitting several viral diseases. Secretes honeydew leading to sooty mold and reduced plant vigor.',
-        image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: '/assets/Tomatoes-whitefly.jpg',
         recommendedProducts: ['tagveria', 'tag-neem']
       }
     ]
@@ -318,28 +318,28 @@ export const crops: Crop[] = [
         id: 'sweet-corn-fall-armyworm',
         name: 'Fall Armyworm',
         description: 'Highly destructive caterpillar feeding on leaves, tassels, and developing ears. Major pest across Australian sweet corn production.',
-        image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: '/assets/Fall-Armyworm.jpg',
         recommendedProducts: ['tagveria', 'tag-neem', 'tag-k20']
       },
       {
         id: 'sweet-corn-helicoverpa',
         name: 'Corn Earworm (Helicoverpa)',
         description: 'Larvae bore into developing ears damaging kernels. Makes cobs unmarketable and allows entry of fungal diseases.',
-        image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: '/assets/Sweet Corn-Corn Earworm.jpeg',
         recommendedProducts: ['tagveria', 'tag-neem', 'tag-k20']
       },
       {
         id: 'sweet-corn-rust',
         name: 'Common Rust',
         description: 'Fungal disease producing orange-brown pustules on leaves. Reduces photosynthetic capacity affecting ear development and sugar content.',
-        image: '/assets/Brown Rust 01.jpg',
+        image: '/assets/Sweet Corn- Common Rust .jpg',
         recommendedProducts: ['tag-zinc', 'tag-poly', 'tag-k20']
       },
       {
         id: 'sweet-corn-smut',
         name: 'Common Smut',
         description: 'Fungal disease forming large grey-white galls on ears, tassels, and stalks. Galls burst releasing black spores.',
-        image: '/assets/Loose Smut 01.jpg',
+        image: '/assets/Sweet Corn-Common Smut.jpg',
         recommendedProducts: ['tag-poly', 'tag-humic', 'tag-zinc']
       }
     ]
@@ -354,7 +354,7 @@ export const crops: Crop[] = [
         id: 'onion-purple-blotch',
         name: 'Purple Blotch',
         description: 'Fungal disease causing pale leaf spots with greyish-purple mold. Major disease during cool, wet conditions reducing bulb development.',
-        image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: '/assets/Onions- Purple Blotch .jpg',
         recommendedProducts: ['tag-zinc', 'tag-poly', 'tag-humic']
       },
       {
@@ -376,7 +376,7 @@ export const crops: Crop[] = [
         id: 'potato-purple-blotch',
         name: 'Purple Blotch',
         description: 'Most destructive potato disease causing dark lesions on leaves and tubers. Can devastate entire crops in cool, humid weather.',
-        image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: '/assets/Potatoes-Purple Blotch.jpg.webp',
         recommendedProducts: ['tag-k20', 'tag-zinc', 'tag-humic']
       },
       {

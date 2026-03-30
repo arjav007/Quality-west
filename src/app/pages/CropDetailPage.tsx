@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router';
-import { ChevronRight, ChevronLeft, AlertTriangle, CheckCircle } from 'lucide-react';
-import Slider from 'react-slick';
+import { ChevronRight, AlertTriangle, CheckCircle } from 'lucide-react';
 import { Header } from '@/app/components/Header';
 import { ProductModal } from '@/app/components/ProductModal';
 import { Footer } from '@/app/components/Footer';
@@ -11,7 +10,10 @@ import { products } from '@/app/data/productData';
 // Crop detail page with problem-solution layout
 export default function CropDetailPage() {
   const { cropId } = useParams();
-  const crop = crops.find(c => c.id === cropId);
+  
+  // Robust crop matching
+  const crop = crops.find(c => String(c.id).toLowerCase() === String(cropId).toLowerCase());
+  
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -24,7 +26,8 @@ export default function CropDetailPage() {
   }
 
   const openProductModal = (productId: string) => {
-    const product = products.find(p => p.id === productId);
+    // Robust case-insensitive matching for the modal
+    const product = products.find(p => String(p.id).toLowerCase().trim() === String(productId).toLowerCase().trim());
     if (product) {
       setSelectedProduct(product);
       setIsModalOpen(true);
@@ -41,54 +44,6 @@ export default function CropDetailPage() {
     // Navigate to home page with form pre-selected
     window.location.href = `/#contact-form`;
   };
-
-  // Custom arrow components for product carousel
-  const CustomPrevArrow = (props: any) => {
-    const { onClick } = props;
-    return (
-      <button
-        onClick={onClick}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-[#1F7A4A] rounded-full p-2 shadow-lg transition-all -ml-3"
-        aria-label="Previous"
-      >
-        <ChevronLeft className="w-5 h-5" />
-      </button>
-    );
-  };
-
-  const CustomNextArrow = (props: any) => {
-    const { onClick } = props;
-    return (
-      <button
-        onClick={onClick}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-[#1F7A4A] rounded-full p-2 shadow-lg transition-all -mr-3"
-        aria-label="Next"
-      >
-        <ChevronRight className="w-5 h-5" />
-      </button>
-    );
-  };
-
-  // Slider settings for product carousel
-  const getSliderSettings = (productCount: number) => ({
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: Math.min(3, productCount),
-    slidesToScroll: 1,
-    arrows: true,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
-    responsive: [
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: Math.min(2, productCount),
-          slidesToScroll: 1,
-        }
-      }
-    ]
-  });
 
   return (
     <div className="min-h-screen bg-white">
@@ -196,7 +151,11 @@ export default function CropDetailPage() {
                       {/* Product Rows */}
                       <div className="space-y-4">
                         {problem.recommendedProducts.map((productId) => {
-                          const product = products.find(p => p.id === productId);
+                          // Bulletproof ID matching: Ignores exact capitalization and spaces
+                          const product = products.find(p => 
+                            String(p.id).toLowerCase().trim() === String(productId).toLowerCase().trim()
+                          );
+                          
                           if (!product) return null;
                           
                           // Determine badge color based on category
@@ -262,9 +221,6 @@ export default function CropDetailPage() {
               ))}
             </div>
           </div>
-
-          {/* Call to Action */}
-          
         </div>
       </section>
 
