@@ -82,8 +82,9 @@ export default function CropDetailPage() {
           <div className="max-w-6xl mx-auto">
             {/* Single Card with Header */}
             <div className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
-              {/* Card Header */}
-              <div className="grid lg:grid-cols-2 gap-0 border-b-2 border-gray-200 bg-[#F8F9F6]">
+              
+              {/* Card Header - HIDDEN ON MOBILE, VISIBLE ON DESKTOP */}
+              <div className="hidden lg:grid lg:grid-cols-2 gap-0 border-b-2 border-gray-200 bg-[#F8F9F6]">
                 {/* Left Header */}
                 <div className="p-6 lg:border-r-2 border-gray-200">
                   <div className="flex items-center gap-3">
@@ -119,8 +120,23 @@ export default function CropDetailPage() {
               {crop.problems.map((problem, index) => (
                 <div key={problem.id}>
                   <div className="grid lg:grid-cols-2 gap-0">
+                    
                     {/* Left: Problem Info */}
                     <div className="p-6 md:p-8 flex flex-col lg:border-r-2 border-gray-200 bg-[#f8f9f6]">
+                      
+                      {/* MOBILE ONLY: "The Problem" Header */}
+                      <div className="flex lg:hidden items-center gap-3 mb-6">
+                        <div className="bg-[#DC6B19] rounded-full p-2">
+                          <AlertTriangle className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 
+                          className="text-xl font-bold text-[#DC6B19]"
+                          style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}
+                        >
+                          The Problem
+                        </h3>
+                      </div>
+
                       <h4 
                         className="font-semibold text-[#1F7A4A] mb-3"
                         style={{ 
@@ -148,6 +164,20 @@ export default function CropDetailPage() {
 
                     {/* Right: Product Solutions - Table Style */}
                     <div className="p-6 md:p-8 flex flex-col">
+                      
+                      {/* MOBILE ONLY: "Our Organic Solutions" Header */}
+                      <div className="flex lg:hidden items-center gap-3 mb-6">
+                        <div className="bg-[#1F7A4A] rounded-full p-2">
+                          <CheckCircle className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 
+                          className="text-xl font-bold text-[#1F7A4A]"
+                          style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}
+                        >
+                          Our Organic Solutions
+                        </h3>
+                      </div>
+
                       {/* Product Rows */}
                       <div className="space-y-4">
                         {problem.recommendedProducts.map((productId) => {

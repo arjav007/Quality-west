@@ -86,8 +86,9 @@ export default function HomePage() {
       <section id="home" className="relative bg-gradient-to-br from-[#00401E] via-[#1a6b40] to-[#532A00] text-white pt-20">
         <div className="absolute inset-0 opacity-10">
           <img 
-            src="https://images.unsplash.com/photo-1755931359594-852c73c6609c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXN0cmFsaWFuJTIwZmFybSUyMGNyb3BzJTIwZmllbGR8ZW58MXx8fHwxNzY4NjQxMjY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="https://images.unsplash.com/photo-1755931359594-852c73c6609c?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXN0cmFsaWFuJTIwZmFybSUyMGNyb3BzJTIwZmllbGR8ZW58MXx8fHwxNzY4NjQxMjY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="Australian farm"
+            fetchPriority="high"
             className="w-full h-full object-cover"
           />
         </div>
@@ -364,10 +365,11 @@ export default function HomePage() {
                 <div key={product.id} className="w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] flex-shrink-0 snap-start">
                   <div className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all h-full flex flex-col">
                     {/* Product Image */}
-                    <div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center">
+                    <div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center shrink-0">
                       <img 
                         src={product.image} 
                         alt={product.name}
+                        loading="lazy"
                         draggable={false}
                         className="w-full h-full object-contain mix-blend-darken select-none pointer-events-none"
                       />
@@ -376,7 +378,7 @@ export default function HomePage() {
                     {/* Product Info */}
                     <div className="p-6 flex flex-col flex-grow">
                       {/* Category Badge */}
-                      <div className="mb-3">
+                      <div className="mb-3 shrink-0">
                         <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${getCategoryColor(product.category)}`}>
                           {product.category}
                         </span>
@@ -388,7 +390,7 @@ export default function HomePage() {
                       </div>
 
                       {/* Key Features */}
-                      <div className="mb-5 space-y-2">
+                      <div className="mb-5 space-y-2 shrink-0">
                         {product.keyFeatures.slice(0, 3).map((feature, index) => (
                           <div key={index} className="flex items-center gap-2 text-sm">
                             <Check className="w-4 h-4 text-[#4CAF50] flex-shrink-0" />
@@ -400,7 +402,7 @@ export default function HomePage() {
                       {/* CTA Button */}
                       <button
                         onClick={() => openProductModal(product)}
-                        className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mt-auto"
+                        className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mt-auto shrink-0"
                       >
                         View Full Details
                         <ChevronRight size={18} />
@@ -424,32 +426,33 @@ export default function HomePage() {
           {/* Product Grid - Mobile */}
           <div className="md:hidden grid grid-cols-1 gap-6">
             {filteredProducts.map((product) => (
-              <div key={product.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all hover:shadow-lg">
+              <div key={product.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all hover:shadow-lg flex flex-col h-full">
                 {/* Product Image */}
-                <div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center">
+                <div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center shrink-0">
                   <img 
                     src={product.image} 
                     alt={product.name}
+                    loading="lazy"
                     className="w-full h-full object-contain mix-blend-darken select-none"
                   />
                 </div>
 
                 {/* Product Info */}
-                <div className="p-6 flex flex-col h-full">
+                <div className="p-6 flex flex-col flex-grow">
                   {/* Category Badge */}
-                  <div className="mb-3">
+                  <div className="mb-3 shrink-0">
                     <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${getCategoryColor(product.category)}`}>
                       {product.category}
                     </span>
                   </div>
 
-                  <div className="mb-4">
+                  <div className="mb-4 flex-grow">
                     <h3 className="text-2xl font-bold text-[#1F7A4A] mb-2">{product.name}</h3>
                     <p className="text-[#6B6B6B]">{product.tagline}</p>
                   </div>
 
                   {/* Key Features */}
-                  <div className="mb-5 space-y-2">
+                  <div className="mb-5 space-y-2 shrink-0">
                     {product.keyFeatures.slice(0, 3).map((feature, index) => (
                       <div key={index} className="flex items-center gap-2 text-sm">
                         <Check className="w-4 h-4 text-[#4CAF50] flex-shrink-0" />
@@ -461,7 +464,7 @@ export default function HomePage() {
                   {/* CTA Button */}
                   <button
                     onClick={() => openProductModal(product)}
-                    className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mt-auto"
+                    className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mt-auto shrink-0"
                   >
                     View Full Details
                     <ChevronRight size={18} />
@@ -687,8 +690,9 @@ export default function HomePage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1601408648796-349272138e57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kcyUyMGhvbGRpbmclMjBzb2lsJTIwcGxhbnRzfGVufDF8fHx8MTc2ODk5ODE4OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="https://images.unsplash.com/photo-1601408648796-349272138e57?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kcyUyMGhvbGRpbmclMjBzb2lsJTIwcGxhbnRzfGVufDF8fHx8MTc2ODk5ODE4OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                   alt="Nurturing healthy soil"
+                  loading="lazy"
                   className="w-full h-[500px] object-cover"
                 />
               </div>
