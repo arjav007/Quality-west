@@ -95,16 +95,17 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA Buttons - Responsive Padding and Labels */}
+          {/* Desktop CTA Area - Responsive Padding and Labels */}
           <div className="hidden lg:flex items-center lg:gap-3 xl:gap-4 flex-shrink-0">
-            <a
-              href="tel:+61405052588"
-              className="bg-white border border-[#1F7A4A] text-[#1F7A4A] hover:bg-gray-50 transition-colors inline-flex items-center gap-2 lg:px-4 xl:px-6 lg:py-2.5 xl:py-3 rounded-[10px] font-medium whitespace-nowrap lg:text-sm xl:text-base"
+            
+            {/* Inactive Phone Number Badge for Desktop */}
+            <div
+              className="bg-white border border-[#1F7A4A] text-[#1F7A4A] inline-flex items-center gap-2 lg:px-4 xl:px-6 lg:py-2.5 xl:py-3 rounded-[10px] font-medium whitespace-nowrap lg:text-sm xl:text-base cursor-default select-text"
             >
               <Phone className="w-4 h-4 xl:w-[18px] xl:h-[18px]" />
-              <span className="hidden xl:inline">Call Us</span>
-              <span className="xl:hidden">Call</span>
-            </a>
+              <span>+61 405 052 588</span>
+            </div>
+
             <a
               href="#home"
               onClick={(e) => scrollToSection(e, '#home')}
@@ -140,6 +141,8 @@ export function Header() {
               </a>
             ))}
             <div className="border-t border-gray-200 pt-3 mt-2 space-y-3">
+              
+              {/* Active Phone Button for Mobile */}
               <a
                 href="tel:+61405052588"
                 className="bg-white border border-[#1F7A4A] text-[#1F7A4A] hover:bg-gray-50 transition-all inline-flex items-center gap-2 px-6 py-3 rounded-[10px] font-medium w-full sm:w-auto justify-center"
@@ -152,6 +155,8 @@ export function Header() {
                   Call Us
                 </span>
               </a>
+
+              {/* Active WhatsApp Button for Mobile */}
               <a
                 href="https://wa.me/61405052588?text=Hi%20Quality%20West,%20I%20would%20like%20to%20enquire%20about%20your%20organic%20solutions."
                 target="_blank"
