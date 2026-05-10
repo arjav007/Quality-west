@@ -105,10 +105,10 @@ export default function HomePage() {
                   Organic Fertilizer Solutions for Healthier Crops & Better Yield
                 </h1>
                 <p 
-                  className="text-base sm:text-lg lg:text-xl text-white/90"
+                  className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed"
                   style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
                 >
-                  Premium organic fertilizers and agricultural inputs imported from India — helping Australian farmers improve soil health, crop quality, and sustainable productivity.
+                  Premium organic fertilizers and agricultural inputs from a proud <span className="font-semibold text-white">local Australian company</span> — helping farmers improve soil health, crop quality, and sustainable productivity. <span className="font-semibold text-white">Delivered straight to your doorsteps.</span>
                 </p>
               </div>
 
@@ -167,49 +167,83 @@ export default function HomePage() {
                       className="text-white/80 text-sm"
                       style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
                     >
-                      Premium imports from India with consistent quality standards
+                      Premium quality standards you can rely on, delivered to your doorsteps
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-0">
-                {/* Updated Call Us Button */}
-                <a
-                  href="tel:+61405052588" 
-                  className="bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] border border-[rgba(255,255,255,0.4)] text-white px-6 py-3 rounded-[10px] font-medium transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
-                  style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
-                >
-                  <Phone size={18} />
-                  <span>Call Us</span>
-                </a>
+             {/* CTA Section */}
+             <div className="pt-0">
+                {/* CTA Buttons - Mobile and iPad Only (< 1024px) - Clickable Links */}
+                <div className="flex lg:hidden flex-col sm:flex-row gap-4">
+                  <a
+                    href="tel:+61405052588" 
+                    className="bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] border border-[rgba(255,255,255,0.4)] text-white px-6 py-3 rounded-[10px] font-medium transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
+                    style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                  >
+                    <Phone size={18} />
+                    <span>Call Us</span>
+                  </a>
 
-                {/* WhatsApp Button */}
-                <a
-                  href="https://wa.me/61405052588?text=Hi%20Quality%20West,%20I%20would%20like%20to%20enquire%20about%20your%20organic%20solutions." 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
-                  style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
-                >
-                  <div className="relative shrink-0 w-[18px] h-[18px]">
-                    <div 
-                      className="absolute inset-0 bg-white" 
-                      style={{ 
-                        maskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
-                        maskSize: '18px 18px',
-                        maskPosition: 'center',
-                        maskRepeat: 'no-repeat',
-                        WebkitMaskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
-                        WebkitMaskSize: '18px 18px',
-                        WebkitMaskPosition: 'center',
-                        WebkitMaskRepeat: 'no-repeat'
-                      }} 
-                    />
+                  <a
+                    href="https://wa.me/61405052588?text=Hi%20Quality%20West,%20I%20would%20like%20to%20enquire%20about%20your%20organic%20solutions." 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
+                    style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                  >
+                    <div className="relative shrink-0 w-[18px] h-[18px]">
+                      <div 
+                        className="absolute inset-0 bg-white" 
+                        style={{ 
+                          maskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
+                          maskSize: '18px 18px',
+                          maskPosition: 'center',
+                          maskRepeat: 'no-repeat',
+                          WebkitMaskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
+                          WebkitMaskSize: '18px 18px',
+                          WebkitMaskPosition: 'center',
+                          WebkitMaskRepeat: 'no-repeat'
+                        }} 
+                      />
+                    </div>
+                    <span className="font-medium text-base">WhatsApp</span>
+                  </a>
+                </div>
+
+                {/* CTA Inactive Buttons - Laptop and Desktop Only (>= 1024px) - Non-clickable with Text */}
+                <div className="hidden lg:flex flex-row gap-4 mt-4">
+                  <div
+                    className="bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.4)] text-white px-6 py-3 rounded-[10px] font-medium flex items-center justify-center gap-2 select-text cursor-default"
+                    style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                  >
+                    <Phone size={18} />
+                    <span>Call: +61 405 052 588</span>
                   </div>
-                  <span className="font-medium text-base">WhatsApp</span>
-                </a>
+
+                  <div
+                    className="bg-[#0DC853] text-white px-6 py-3 rounded-[10px] font-medium flex items-center justify-center gap-2 select-text cursor-default"
+                    style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                  >
+                    <div className="relative shrink-0 w-[18px] h-[18px]">
+                      <div 
+                        className="absolute inset-0 bg-white" 
+                        style={{ 
+                          maskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
+                          maskSize: '18px 18px',
+                          maskPosition: 'center',
+                          maskRepeat: 'no-repeat',
+                          WebkitMaskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
+                          WebkitMaskSize: '18px 18px',
+                          WebkitMaskPosition: 'center',
+                          WebkitMaskRepeat: 'no-repeat'
+                        }} 
+                      />
+                    </div>
+                    <span>WhatsApp: +61 405 052 588</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -345,9 +379,8 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Product List - Desktop (Native Horizontal Scroll with Arrows) */}
+          {/* Product List - Desktop */}
           <div className="hidden md:block relative">
-            {/* Left Scroll Arrow */}
             <button 
               onClick={() => scroll('left')}
               className="absolute left-0 top-[40%] -translate-y-1/2 -ml-5 z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 text-[#1F7A4A] hover:bg-gray-50 transition-all"
@@ -364,7 +397,6 @@ export default function HomePage() {
               {filteredProducts.map((product) => (
                 <div key={product.id} className="w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] flex-shrink-0 snap-start">
                   <div className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all h-full flex flex-col">
-                    {/* Product Image */}
                     <div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center shrink-0">
                       <img 
                         src={product.image} 
@@ -374,22 +406,16 @@ export default function HomePage() {
                         className="w-full h-full object-contain mix-blend-darken select-none pointer-events-none"
                       />
                     </div>
-
-                    {/* Product Info */}
                     <div className="p-6 flex flex-col flex-grow">
-                      {/* Category Badge */}
                       <div className="mb-3 shrink-0">
                         <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${getCategoryColor(product.category)}`}>
                           {product.category}
                         </span>
                       </div>
-
                       <div className="mb-4 flex-grow">
                         <h3 className="text-2xl font-bold text-[#1F7A4A] mb-2">{product.name}</h3>
                         <p className="text-[#6B6B6B]">{product.tagline}</p>
                       </div>
-
-                      {/* Key Features */}
                       <div className="mb-5 space-y-2 shrink-0">
                         {product.keyFeatures.slice(0, 3).map((feature, index) => (
                           <div key={index} className="flex items-center gap-2 text-sm">
@@ -398,8 +424,6 @@ export default function HomePage() {
                           </div>
                         ))}
                       </div>
-
-                      {/* CTA Button */}
                       <button
                         onClick={() => openProductModal(product)}
                         className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mt-auto shrink-0"
@@ -413,7 +437,6 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* Right Scroll Arrow */}
             <button 
               onClick={() => scroll('right')}
               className="absolute right-0 top-[40%] -translate-y-1/2 -mr-5 z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 text-[#1F7A4A] hover:bg-gray-50 transition-all"
@@ -427,7 +450,6 @@ export default function HomePage() {
           <div className="md:hidden grid grid-cols-1 gap-6">
             {filteredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all hover:shadow-lg flex flex-col h-full">
-                {/* Product Image */}
                 <div className="h-64 overflow-hidden bg-[#F8F9F6] p-4 flex items-center justify-center shrink-0">
                   <img 
                     src={product.image} 
@@ -436,22 +458,16 @@ export default function HomePage() {
                     className="w-full h-full object-contain mix-blend-darken select-none"
                   />
                 </div>
-
-                {/* Product Info */}
                 <div className="p-6 flex flex-col flex-grow">
-                  {/* Category Badge */}
                   <div className="mb-3 shrink-0">
                     <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${getCategoryColor(product.category)}`}>
                       {product.category}
                     </span>
                   </div>
-
                   <div className="mb-4 flex-grow">
                     <h3 className="text-2xl font-bold text-[#1F7A4A] mb-2">{product.name}</h3>
                     <p className="text-[#6B6B6B]">{product.tagline}</p>
                   </div>
-
-                  {/* Key Features */}
                   <div className="mb-5 space-y-2 shrink-0">
                     {product.keyFeatures.slice(0, 3).map((feature, index) => (
                       <div key={index} className="flex items-center gap-2 text-sm">
@@ -460,8 +476,6 @@ export default function HomePage() {
                       </div>
                     ))}
                   </div>
-
-                  {/* CTA Button */}
                   <button
                     onClick={() => openProductModal(product)}
                     className="w-full bg-[#1F7A4A] hover:bg-[#165a36] text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mt-auto shrink-0"
@@ -474,7 +488,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Contact hint */}
           <div className="text-center mt-10">
             <p className="text-[#6B6B6B] text-[16px]">
               Need something specific? <a href="#home" className="text-[#1F7A4A] font-medium hover:underline font-bold">Contact us</a> for personalized recommendations
@@ -502,78 +515,47 @@ export default function HomePage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            {/* Healthier Soil */}
             <div className="text-center space-y-4">
               <div className="bg-[#F8F9F6] w-20 h-20 rounded-full flex items-center justify-center mx-auto">
                 <Droplets className="w-10 h-10 text-[#1F7A4A]" />
               </div>
-              <h3 
-                className="text-xl font-semibold text-[#1F7A4A]"
-                style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}
-              >
+              <h3 className="text-xl font-semibold text-[#1F7A4A]" style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}>
                 Healthier Soil
               </h3>
-              <p 
-                className="text-[#6B6B6B] max-w-[322px] mx-auto"
-                style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
-              >
+              <p className="text-[#6B6B6B] max-w-[322px] mx-auto" style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}>
                 Improves soil structure and enhances water retention for long-term fertility
               </p>
             </div>
-
-            {/* Stronger Crops */}
             <div className="text-center space-y-4">
               <div className="bg-[#F8F9F6] w-20 h-20 rounded-full flex items-center justify-center mx-auto">
                 <Sprout className="w-10 h-10 text-[#1F7A4A]" />
               </div>
-              <h3 
-                className="text-xl font-semibold text-[#1F7A4A]"
-                style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}
-              >
+              <h3 className="text-xl font-semibold text-[#1F7A4A]" style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}>
                 Stronger Crops
               </h3>
-              <p 
-                className="text-[#6B6B6B] max-w-[322px] mx-auto"
-                style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
-              >
+              <p className="text-[#6B6B6B] max-w-[322px] mx-auto" style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}>
                 Promotes vigorous growth, better root systems, and increased resistance to pests and diseases
               </p>
             </div>
-
-            {/* Better Yield & Quality */}
             <div className="text-center space-y-4">
               <div className="bg-[#F8F9F6] w-20 h-20 rounded-full flex items-center justify-center mx-auto">
                 <TrendingUp className="w-10 h-10 text-[#1F7A4A]" />
               </div>
-              <h3 
-                className="text-xl font-semibold text-[#1F7A4A]"
-                style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}
-              >
+              <h3 className="text-xl font-semibold text-[#1F7A4A]" style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}>
                 Better Yield & Quality
               </h3>
-              <p 
-                className="text-[#6B6B6B] max-w-[322px] mx-auto"
-                style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
-              >
+              <p className="text-[#6B6B6B] max-w-[322px] mx-auto" style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}>
                 Increases crop yields while improving taste, color, shelf life, and overall market value
               </p>
             </div>
-
-            {/* Sustainable Farming */}
             <div className="text-center space-y-4">
               <div className="bg-[#F8F9F6] w-20 h-20 rounded-full flex items-center justify-center mx-auto">
                 <Sun className="w-10 h-10 text-[#1F7A4A]" />
               </div>
-              <h3 
-                className="text-xl font-semibold text-[#1F7A4A]"
-                style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}
-              >
+              <h3 className="text-xl font-semibold text-[#1F7A4A]" style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}>
                 Sustainable Farming
               </h3>
-              <p 
-                className="text-[#6B6B6B] max-w-[322px] mx-auto"
-                style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
-              >
+              <p className="text-[#6B6B6B] max-w-[322px] mx-auto" style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}>
                 Reduces chemical dependence, protects the environment, and supports organic certification
               </p>
             </div>
@@ -591,12 +573,6 @@ export default function HomePage() {
             >
               What Farmers Say
             </h2>
-            <p 
-              className="text-lg text-[#6B6B6B] max-w-2xl mx-auto"
-              style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
-            >
-              Trusted by Australian farmers across the country
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -608,7 +584,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-[#6B6B6B] italic leading-relaxed text-[15px]">
-              “QualityWest did exactly what they promised, mate! I followed their advice and used their products properly—just four targeted sprays instead of overdoing it with chemicals. Last season, fungus really knocked my crop around and I only got about 5.5 quintals per acre. This year though, the cotton stayed healthy and green, and I’m expecting around 9 to 9.5 quintals per acre. Their regular farm visits and honest, no-nonsense advice have definitely earned my trust. Highly recommend them!”
+              “They did exactly what they promised, mate! I followed their advice and used the products properly—just four targeted sprays instead of overdoing it with chemicals. Last season, fungus really knocked my crop around and I only got about 5.5 quintals per acre. This year though, the cotton stayed healthy and green, and I’m expecting around 9 to 9.5 quintals per acre. Their regular farm visits and honest, no-nonsense advice have definitely earned my trust. Highly recommend them!”
               </p>
             </div>
 
@@ -620,7 +596,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-[#6B6B6B] italic leading-relaxed text-[15px]">
-              “I initially believed my cumin crop was beyond recovery after an accidental weedicide application and was preparing to plough the field, anticipating a loss of nearly ₹2 lakhs. However, after using Quality West’s Tag Start, the crop showed remarkable recovery, with healthy new growth appearing within just 3 to 4 days. It proved to be an extremely effective solution in reviving the crop. Based on this experience, I have strong confidence in Quality West’s guidance and products.”
+              “I initially believed my cumin crop was beyond recovery after an accidental weedicide application and was preparing to plough the field, anticipating a devastating financial loss. However, after using Tag Start, the crop showed remarkable recovery, with healthy new growth appearing within just 3 to 4 days. It proved to be an extremely effective solution in reviving the crop. Based on this experience, I have strong confidence in their guidance and products.”
               </p>
             </div>
           </div>
@@ -652,13 +628,13 @@ export default function HomePage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-2xl font-semibold text-[#1F7A4A] mb-4">
-                  Premium Organic Solutions from India
+                  Premium Organic Solutions
                 </h3>
                 <p className="text-[#6B6B6B] leading-relaxed mb-4">
-                  <span className="font-semibold text-[#1F7A4A]">Quality West Company Pty. Ltd.</span> specializes in importing premium organic fertilizers and agricultural solutions from India — a global leader in sustainable farming practices.
+                  <span className="font-semibold text-[#1F7A4A]">Quality West Company Pty. Ltd.</span> is a proud local Australian company specializing in premium organic fertilizers and agricultural solutions.
                 </p>
                 <p className="text-[#6B6B6B] leading-relaxed">
-                  Our mission is to empower Australian farmers with effective, eco-friendly products that improve soil health, boost crop quality, and support long-term sustainability.
+                  Our mission is to empower farmers with effective, eco-friendly products that improve soil health, boost crop quality, and support long-term sustainability—conveniently delivered straight to your doorsteps.
                 </p>
               </div>
 
@@ -681,7 +657,7 @@ export default function HomePage() {
               {/* Quote */}
               <div className="bg-[#1F7A4A]/5 border-l-4 border-[#1F7A4A] p-6 rounded-r-xl">
                 <p className="text-[#1F7A4A] italic font-medium">
-                  "We don't just import products—we build partnerships with farmers committed to sustainable, profitable agriculture."
+                  "We don't just supply products—we build partnerships with farmers committed to sustainable, profitable agriculture."
                 </p>
               </div>
             </div>
@@ -701,7 +677,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Core Values - Clean 3 Column */}
+          {/* Core Values */}
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-xl border border-gray-200 text-center">
               <div className="w-14 h-14 bg-gradient-to-br from-[#1F7A4A] to-[#4CAF50] rounded-xl flex items-center justify-center mx-auto mb-4">
