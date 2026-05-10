@@ -12,7 +12,6 @@ export function Footer() {
   };
 
   const handleWhatsApp = () => {
-    // Updated with the pre-filled message and removed the '+' for better WhatsApp compatibility
     window.open('https://wa.me/61405052588?text=Hi%20Quality%20West,%20I%20would%20like%20to%20enquire%20about%20your%20organic%20solutions.', '_blank');
   };
 
@@ -46,9 +45,10 @@ export function Footer() {
               </p>
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons & Badges */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              {/* Submit Enquiry Button */}
+              
+              {/* Submit Enquiry Button (Always Active/Clickable) */}
               <button
                 onClick={handleSubmitEnquiry}
                 className="bg-white hover:bg-gray-50 text-[#1F7A4A] px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
@@ -62,10 +62,10 @@ export function Footer() {
                 <ChevronRight className="w-5 h-5" />
               </button>
 
-              {/* Call Us Button */}
+              {/* Call Us Button - MOBILE & IPAD ONLY (< 1024px) */}
               <button
                 onClick={handleCallUs}
-                className="bg-white/20 hover:bg-white/30 border border-white/40 text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+                className="lg:hidden bg-white/20 hover:bg-white/30 border border-white/40 text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 18 18">
                   <path 
@@ -84,10 +84,10 @@ export function Footer() {
                 </span>
               </button>
 
-              {/* WhatsApp Button */}
+              {/* WhatsApp Button - MOBILE & IPAD ONLY (< 1024px) */}
               <button
                 onClick={handleWhatsApp}
-                className="bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+                className="lg:hidden bg-[#0DC853] hover:bg-[#0bb847] text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 <div className="relative shrink-0 w-[18px] h-[18px]">
                   <div 
@@ -111,6 +111,55 @@ export function Footer() {
                   WhatsApp
                 </span>
               </button>
+
+              {/* Call Us Badge - DESKTOP ONLY (>= 1024px) - Inactive/Selectable */}
+              <div
+                className="hidden lg:flex bg-white/20 border border-white/40 text-white px-6 py-3 rounded-lg items-center gap-2 w-full sm:w-auto justify-center cursor-default select-text"
+              >
+                <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 18 18">
+                  <path 
+                    d={svgPaths.p27558400} 
+                    stroke="currentColor" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth="1.5" 
+                  />
+                </svg>
+                <span 
+                  className="font-medium text-base"
+                  style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                >
+                  Call: +61 405 052 588
+                </span>
+              </div>
+
+              {/* WhatsApp Badge - DESKTOP ONLY (>= 1024px) - Inactive/Selectable */}
+              <div
+                className="hidden lg:flex bg-[#0DC853] text-white px-6 py-3 rounded-lg items-center gap-2 w-full sm:w-auto justify-center cursor-default select-text"
+              >
+                <div className="relative shrink-0 w-[18px] h-[18px]">
+                  <div 
+                    className="absolute inset-0 bg-white" 
+                    style={{ 
+                      maskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
+                      maskSize: '18px 18px',
+                      maskPosition: 'center',
+                      maskRepeat: 'no-repeat',
+                      WebkitMaskImage: `url('/assets/d006c6a64198400f28f7f57d831274dc9fa439b3.png')`,
+                      WebkitMaskSize: '18px 18px',
+                      WebkitMaskPosition: 'center',
+                      WebkitMaskRepeat: 'no-repeat'
+                    }} 
+                  />
+                </div>
+                <span 
+                  className="font-medium text-base"
+                  style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
+                >
+                  WhatsApp: +61 405 052 588
+                </span>
+              </div>
+
             </div>
           </div>
         </div>
