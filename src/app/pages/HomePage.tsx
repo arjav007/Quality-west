@@ -108,7 +108,7 @@ export default function HomePage() {
                   className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed"
                   style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 14" }}
                 >
-                  Premium organic fertilizers and agricultural inputs from a proud <span className="font-semibold text-white">local Australian company</span> — helping farmers improve soil health, crop quality, and sustainable productivity. <span className="font-semibold text-white">Delivered straight to your doorsteps.</span>
+                  Premium organic fertilizers and agricultural solutions from a proud <span className="font-semibold text-white">local Australian company</span> — helping farmers improve soil health, crop quality, and sustainable productivity. <span className="font-semibold text-white">Delivered straight to your doorsteps.</span>
                 </p>
               </div>
 
@@ -129,7 +129,7 @@ export default function HomePage() {
                       className="text-white/80 text-sm"
                       style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
                     >
-                      Certified organic products that protect your soil and environment
+                      Certified organic agricultural products that protect your soil and environment
                     </p>
                   </div>
                 </div>
@@ -272,7 +272,7 @@ export default function HomePage() {
               className="text-lg text-[#6B6B6B] max-w-2xl mx-auto"
               style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
             >
-              We're committed to providing Australian farmers with the finest organic agricultural solutions
+              We're committed to providing Australian farmers with the finest high quality organic agricultural solutions
             </p>
           </div>
 
@@ -618,7 +618,7 @@ export default function HomePage() {
               className="text-lg text-[#6B6B6B] max-w-2xl mx-auto"
               style={{ fontFamily: 'DM Sans, sans-serif', fontVariationSettings: "'opsz' 9" }}
             >
-              Australia's trusted partner in organic agriculture
+              Australia's trusted  partner in high quality agricultural solutions
             </p>
           </div>
 
@@ -634,7 +634,7 @@ export default function HomePage() {
                   <span className="font-semibold text-[#1F7A4A]">Quality West Company Pty. Ltd.</span> is a proud local Australian company specializing in premium organic fertilizers and agricultural solutions.
                 </p>
                 <p className="text-[#6B6B6B] leading-relaxed">
-                  Our mission is to empower farmers with effective, eco-friendly products that improve soil health, boost crop quality, and support long-term sustainability—conveniently delivered straight to your doorsteps.
+                Our mission is to empower farmers with effective, eco-friendly products that improve soil health, boost crop quality, and support long-term sustainability, conveniently delivered straight to your doorsteps.
                 </p>
               </div>
 
