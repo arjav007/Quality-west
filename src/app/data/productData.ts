@@ -21,7 +21,7 @@ export const products: Product[] = [
     name: 'Tag Veria',
     tagline: 'Broad-Spectrum Bio-Insecticide',
     category: 'Biological Insecticide',
-    image: '/assets/Tag-Veria.jpg',
+    image: '/assets/tag-veria.png',
     keyFeatures: ['100 Million CFU/gram', 'Broad-Spectrum Bio-Insecticide', 'IPM Compatible & Residue-free'],
     overview: 'Tag Veria is a broad-spectrum bio-insecticide containing a highly virulent strain of Beauveria bassiana, an entomopathogenic fungus effective against a wide range of sucking and chewing insect pests. When the fungal spores (conidia) come in contact with the insect body, they attach to the cuticle and germinate, causing a disease known as white muscardine, which eventually kills the insect by draining its nutrients. Tag Veria is an eco-friendly biological product that fits well into Integrated Pest Management (IPM) programs. It contains a high spore count (minimum 100 million CFU per gram) and leaves no harmful residues in crops or the environment. It is compatible with most agricultural chemicals except chemical fungicides.',
     composition: [
@@ -62,7 +62,7 @@ export const products: Product[] = [
     name: 'Tag Nema',
     tagline: 'Natural Bio-Nematicide',
     category: 'Biological Nematicide',
-    image: '/assets/Tag-Nema.jpg',
+    image: '/assets/tag-nema.png',
     keyFeatures: [
       '2 Million CFU/gram',
       'Bio-Nematicide for All Life Stages',
@@ -106,7 +106,7 @@ export const products: Product[] = [
     name: 'TagLife V',
     tagline: 'Natural Bio-Fungicide with F45 Strain',
     category: 'Biological Fungicide',
-    image: '/assets/taglife-V1.jpg',
+    image: '/assets/taglife-v.png',
     keyFeatures: [
       '2 Million CFU/gram',
       'F45 Strain Trichoderma viride',
@@ -149,7 +149,7 @@ export const products: Product[] = [
     name: 'TagLife H',
     tagline: 'Natural Bio-Fungicide & Bio-Nematicide',
     category: 'Biological Fungicide',
-    image: '/assets/taglife H1.jpg',
+    image: '/assets/taglife-h.png',
     keyFeatures: [
       '2 Million CFU/gram',
       'Bio-Fungicide & Bio-Nematicide',
@@ -195,7 +195,7 @@ export const products: Product[] = [
     name: 'Tag Monas',
     tagline: 'Biological Plant Protection',
     category: 'Biological Fungicide',
-    image: '/assets/tag-Monas.jpg',
+    image: '/assets/tag-monas.png',
     keyFeatures: [
       '100 Million CFU/gram',
       'Fungicide, Bactericide & Nematicide',
@@ -244,7 +244,7 @@ export const products: Product[] = [
     name: 'Tag K20',
     tagline: 'Premium Potassium Fertilizer',
     category: 'Organic Fertilizer',
-    image: '/assets/Tag-K20.png',
+    image: '/assets/tag-k-20.png',
     keyFeatures: ['20% Organic Potash', 'Marine Red Algae Extract', 'Bio-active Molecules'],
     overview: 'Tag K20 is a new-generation plant nutrition product containing minimum 20% potash derived from Rhodophytes (marine red algae) along with 1.5% sulphur and bio-active molecules. This unique formulation enhances flowering, fruit development, and overall crop yield. Tag K20 improves plant hormonal activity which helps in enhancing the shape, size, colour, and lustre of fruits. It also helps plants withstand abiotic stresses such as drought and environmental stress, leading to healthier crops and better quality produce.',
     composition: [
@@ -281,7 +281,7 @@ export const products: Product[] = [
     name: 'Tag Carb-N',
     tagline: 'Granulated Organic Manure',
     category: 'Biostimulant',
-    image: '/assets/Tag-Carb -N.png',
+    image: '/assets/tag-carb-n.png',
     keyFeatures: [
       'Organic Carbon + NPK',
       'Granulated Organic Manure',
@@ -320,7 +320,7 @@ export const products: Product[] = [
     name: 'Gold Bionik',
     tagline: 'Soluble VAM for Stronger Crops',
     category: 'Biofertilizer',
-    image: '/assets/Gold-Bionik.png',
+    image: '/assets/gold-bionik.png',
     keyFeatures: [
       '2000 VAM Spores/gram',
       '100% Water Soluble',
