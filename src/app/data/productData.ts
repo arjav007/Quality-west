@@ -320,7 +320,7 @@ export const products: Product[] = [
     name: 'Gold Bionik',
     tagline: 'Soluble VAM for Stronger Crops',
     category: 'Biofertilizer',
-    image: '/assets/gold-bionik.png',
+    image: '/assets/gold-bionik-v2.png',
     keyFeatures: [
       '2000 VAM Spores/gram',
       '100% Water Soluble',
